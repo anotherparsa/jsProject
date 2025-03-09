@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/anotherparsa/jsProject/issues"
   },
-  "homepage": "https://github.com/anotherparsa/jsProject#readme"
+  "homepage": "https://github.com/anotherparsa/jsProject#readme",
+  "type": "module"
 }
