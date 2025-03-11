@@ -1,13 +1,11 @@
-import http from "http"
-import * as secondary from './secondary.js'
+import express from 'express';
 
-let server = http.createServer((req, res) => {
-    console.log(req);
-    res.writeHead(200);
-    res.end("Hello World")
-})
+const app = express();
 
-server.listen(8080, ()=>{
-    secondary.say_hello();
-    console.log("Server is running on port 8080");
-})
+app.get('/', (req, res) => {
+    res.send("Hello World");
+});
+
+app.listen(8080, () =>{
+    console.log("running server on port 8080");
+});
