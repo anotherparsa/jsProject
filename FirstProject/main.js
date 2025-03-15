@@ -7,13 +7,17 @@ app.use((req, res, next) => {
     next();
 })
 
-app.get('/', (req, res) => {
-    res.send("Hello World");
-});
-
 app.get('/product/:id', (req, res) =>{
     res.send(req.params.id);
 })
+
+app.get('/redirectme', (req, res) =>{
+    res.redirect('/');
+})
+
+app.get('/', (req, res) => {
+    res.send("Hello World");
+});
 
 app.listen(8080, () => {
     console.log("running server on port 8080");
