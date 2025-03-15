@@ -1,4 +1,6 @@
 import express from 'express';
+import * as home from './routes/home.js'
+import * as admin from './routes/admin.js'
 
 const app = express();
 
@@ -7,17 +9,8 @@ app.use((req, res, next) => {
     next();
 })
 
-app.get('/product/:id', (req, res) =>{
-    res.send(req.params.id);
-})
-
-app.get('/redirectme', (req, res) =>{
-    res.redirect('/');
-})
-
-app.get('/', (req, res) => {
-    res.send("Hello World");
-});
+app.use(home.router);
+app.use(admin.router);
 
 app.listen(8080, () => {
     console.log("running server on port 8080");
